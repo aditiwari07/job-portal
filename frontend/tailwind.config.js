@@ -1,5 +1,7 @@
+// tailwind.config.mjs
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: ["class"],
   content: [
     './pages/**/*.{js,jsx}',
@@ -51,16 +53,10 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-
-        // ✅ Added support for `border-border` class
-        border: {
-          DEFAULT: "hsl(var(--border))",
-          border: "hsl(var(--border))", // Added this line
-        },
       },
       borderColor: {
-        DEFAULT: "hsl(var(--border))", // This ensures `border` is used as the default border color
-        border: "hsl(var(--border))", // ✅ Added this line to support `border-border` class
+        DEFAULT: "hsl(var(--border))", // Ensures `border` is used as the default border color
+        border: "hsl(var(--border))", // ✅ Added fix for border-border class
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -84,4 +80,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
