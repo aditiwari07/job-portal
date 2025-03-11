@@ -51,9 +51,16 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
+        // ✅ Added support for `border-border` class
+        border: {
+          DEFAULT: "hsl(var(--border))",
+          border: "hsl(var(--border))", // Added this line
+        },
       },
       borderColor: {
         DEFAULT: "hsl(var(--border))", // This ensures `border` is used as the default border color
+        border: "hsl(var(--border))", // ✅ Added this line to support `border-border` class
       },
       borderRadius: {
         lg: "var(--radius)",
